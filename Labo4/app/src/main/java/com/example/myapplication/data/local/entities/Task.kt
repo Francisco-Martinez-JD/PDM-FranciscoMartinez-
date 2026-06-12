@@ -1,9 +1,12 @@
-package com.example.myapplication.data.model
+package com.example.myapplication.data.local.entities
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.Date
 
-//Model/Task.kt
+@Entity(tableName = "tasks")
 data class Task (
+    @PrimaryKey(autoGenerate = true)
     val id: Int,
     val title: String,
     val description: String,

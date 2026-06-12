@@ -23,7 +23,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.myapplication.data.model.Task
 import com.example.myapplication.ui.screens.CreateTask
 import com.example.myapplication.ui.viewmodel.GeneralViewModel
 
@@ -61,12 +60,7 @@ fun Greeting(
             CreateTask(
                 onDismiss = { showDialog = false },
                 onTaskCreated = { newTitle, newDescription ->
-                    val newTask = Task(
-                        id = tasks.value.size + 1,
-                        title = newTitle,
-                        description = newDescription
-                    )
-                    viewModel.addTask(newTask)
+                    viewModel.addTask(newTitle, newDescription)
                     showDialog = false
                 }
             )

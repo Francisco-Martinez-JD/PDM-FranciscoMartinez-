@@ -12,7 +12,6 @@ import com.example.myapplication.ui.viewmodel.GeneralViewModel
 
 @Composable
 fun Home(
-
     onNavigateToGreeting: () -> Unit,
 
 ){
